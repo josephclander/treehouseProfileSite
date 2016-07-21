@@ -74,8 +74,17 @@ the colors of the bricks and sky into the design
 
 header {
   text-align: center;
-  background: url('images/background.jpg') no-repeat top center ;
+
+  background: radial-gradient(#fff, transparent 130%),
+              url('images/background.jpg') no-repeat top center;
   background-size: cover;
+
+/******************************************************
+After the next CSS course I have returned to make an
+adjustment to that bold background to try and blend it
+in better with the rest of the page
+*******************************************************/
+
   overflow: hidden;
   padding-top: 60px;
   border-bottom: 20px solid rgb(163, 38, 17);
