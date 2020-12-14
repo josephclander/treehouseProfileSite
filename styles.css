@@ -32,6 +32,9 @@ a:hover {
   padding: 10px;
   position: fixed;
   text-align: center;
+  z-index: 5; /* watched more videos to know how 
+  to get this to go above the photo - thanks
+  this has been the only QUICK fix so far! */
 }
 
 /**************************************************************************
@@ -74,8 +77,17 @@ the colors of the bricks and sky into the design
 
 header {
   text-align: center;
-  background: url('images/background.jpg') no-repeat top center ;
+
+  background: radial-gradient(#fff, transparent 130%),
+              url('images/background.jpg') no-repeat top center;
   background-size: cover;
+
+/******************************************************
+After the next CSS course I have returned to make an
+adjustment to that bold background to try and blend it
+in better with the rest of the page
+*******************************************************/
+
   overflow: hidden;
   padding-top: 60px;
   border-bottom: 20px solid rgb(163, 38, 17);
@@ -83,7 +95,53 @@ header {
 header {
   line-height: 1.5;
 }
+
+.pic-wrap {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 70px;
+  height: 150px;
+  width: 150px;
+  /*border-radius: 50%;*/
+  border: 10px;
+}
+
+.profile-overlay {
+  color: #333;
+  text-align: center;
+  font-size: 1.3em;
+  display: inline-block;
+  height: 0;
+  padding: 50% 0;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: rgba(255,255,255,.8);
+  width: 100%;
+  
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/***************************************************
+This section to a lot of work practicing trying to 
+line up containers. Also trying to keep it 
+responsive as well. The margin auto trick helped a lot 
+here but also making sure to get the position declarations 
+correct. Then I found out that vertical alignment isn't
+a simple issue either. Height 0 and width 100% but still
+not convinced completely.
+
+Every adjustment has broken something and led to hours 
+more work! I still now need to fix my profile photo
+scrolling over the navigation bar. [done]
+****************************************************/
+
 header .profile-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   margin-top: 50px;
   width: 150px;
   height: 150px;
@@ -91,6 +149,25 @@ header .profile-image {
   border: 10px solid rgb(163, 38, 17);
   transition: all .5s;
 }
+
+ .pic-wrap:hover .profile-overlay {
+  visibility: visible;
+  opacity: 1;
+  /*border-color: rgba(0,255,0,1);*/
+}
+
+.expsize {
+  width: 100%;
+}
+
+.expPhoto {
+  width: 100%;
+  
+
+  border: 1px solid rgba(3,3,3,1);
+  box-shadow: 3px 3px 5px 2px rgba(9,9,9,.5);
+}
+
 .tag {
   font-family: 'Source Code Pro', monospace;
   background-color: rgb(163, 38, 17);
