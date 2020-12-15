@@ -1,9 +1,9 @@
-/*Passed the error checker*/
-
-
-/* Global Layout Set-up */
 * {
   box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
 }
 
 body {
@@ -12,9 +12,8 @@ body {
   text-align: center;
   font-family: 'Raleway', sans-serif;
   color: #222;
-  background: rgb(171,186,183);
+  background: rgb(171, 186, 183);
 }
-/* Link Styles */
 
 a {
   text-decoration: none;
@@ -23,8 +22,8 @@ a {
 a:hover {
   color: #6633ff;
 }
-/* Section Styles */
 
+/* Navigation */
 .main-nav {
   width: 100%;
   background-color: rgba(163, 38, 17, 0.9);
@@ -32,19 +31,9 @@ a:hover {
   padding: 10px;
   position: fixed;
   text-align: center;
-  z-index: 5; /* watched more videos to know how 
-  to get this to go above the photo - thanks
-  this has been the only QUICK fix so far! */
+  z-index: 5;
+  top: 0;
 }
-
-/**************************************************************************
-I used the mac color picker to match colors with the background image.
-Initially the contrast of the image and the background of my profile
-photo didn't go (still not great-but I don't have a professional head shot!)
-so I used your external photo app recommendation
-to tone down the punchy colors and bring it back as much as I could by bringing
-the colors of the bricks and sky into the design
-***************************************************************************/
 
 .nav {
   font-family: 'Source Code Pro', monospace;
@@ -57,15 +46,15 @@ the colors of the bricks and sky into the design
 }
 
 .nav .name {
-    display: block;
-    margin-right: auto;
-    color: white;
+  display: block;
+  margin-right: auto;
+  color: white;
 }
 .nav li {
   padding: 5px 10px 10px 10px;
 }
 .nav a {
-  transition: all .5s;
+  transition: all 0.5s;
 }
 .nav a:hover {
   color: white;
@@ -75,23 +64,17 @@ the colors of the bricks and sky into the design
   color: #d9d9d9;
 }
 
+/* Header */
 header {
   text-align: center;
-
   background: radial-gradient(#fff, transparent 130%),
-              url('images/background.jpg') no-repeat top center;
+    url('images/background.jpg') no-repeat top center;
   background-size: cover;
-
-/******************************************************
-After the next CSS course I have returned to make an
-adjustment to that bold background to try and blend it
-in better with the rest of the page
-*******************************************************/
-
   overflow: hidden;
   padding-top: 60px;
   border-bottom: 20px solid rgb(163, 38, 17);
 }
+
 header {
   line-height: 1.5;
 }
@@ -102,7 +85,6 @@ header {
   margin-bottom: 70px;
   height: 150px;
   width: 150px;
-  /*border-radius: 50%;*/
   border: 10px;
 }
 
@@ -116,27 +98,13 @@ header {
   position: absolute;
   top: 50px;
   left: 0;
-  background-color: rgba(255,255,255,.8);
+  background-color: rgba(255, 255, 255, 0.8);
   width: 100%;
-  
+
   border-radius: 50%;
   opacity: 0;
   visibility: hidden;
 }
-
-/***************************************************
-This section to a lot of work practicing trying to 
-line up containers. Also trying to keep it 
-responsive as well. The margin auto trick helped a lot 
-here but also making sure to get the position declarations 
-correct. Then I found out that vertical alignment isn't
-a simple issue either. Height 0 and width 100% but still
-not convinced completely.
-
-Every adjustment has broken something and led to hours 
-more work! I still now need to fix my profile photo
-scrolling over the navigation bar. [done]
-****************************************************/
 
 header .profile-image {
   position: absolute;
@@ -147,25 +115,12 @@ header .profile-image {
   height: 150px;
   border-radius: 50%;
   border: 10px solid rgb(163, 38, 17);
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
- .pic-wrap:hover .profile-overlay {
+.pic-wrap:hover .profile-overlay {
   visibility: visible;
   opacity: 1;
-  /*border-color: rgba(0,255,0,1);*/
-}
-
-.expsize {
-  width: 100%;
-}
-
-.expPhoto {
-  width: 100%;
-  
-
-  border: 1px solid rgba(3,3,3,1);
-  box-shadow: 3px 3px 5px 2px rgba(9,9,9,.5);
 }
 
 .tag {
@@ -177,23 +132,49 @@ header .profile-image {
   display: table;
   margin: 10px auto;
 }
+
+/* Experience Page */
+.expsize {
+  width: 100%;
+}
+
+.expPhoto {
+  width: 100%;
+  border: 1px solid rgba(3, 3, 3, 1);
+  box-shadow: 3px 3px 5px 2px rgba(9, 9, 9, 0.5);
+}
+
+/* Main */
+main {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .card {
-  margin: 30px;
-  padding: 20px 40px 40px;
-  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px 15px;
+  width: 100%;
   text-align: left;
   background: #fff;
   border-bottom: 4px solid #999;
   border-right: 4px solid #999;
   border-radius: 6px;
-  transition: all .5s;
+  transition: all 0.5s;
 }
+
 .card h2 {
   text-align: center;
 }
+
 .card:hover {
   border-color: rgb(163, 38, 17);
 }
+
+/* index page skills */
 ul.skills {
   padding: 0;
   text-align: center;
@@ -212,6 +193,17 @@ ul.skills {
   background: rgb(113, 118, 40);
 }
 
+/* Contact Page */
+#workmap {
+  max-width: 100%;
+  border: 1px solid black;
+}
+
+.contact {
+  align-self: flex-start;
+}
+
+/* Footer */
 footer {
   width: 100%;
   min-height: 30px;
@@ -220,7 +212,7 @@ footer {
 
 footer .copyright {
   top: -8px;
-  font-size: .75em;
+  font-size: 0.75em;
 }
 
 footer ul {
@@ -240,35 +232,40 @@ a.social {
   width: 30px;
   height: 30px;
   background-size: 30px 30px;
-  opacity: .4;
-  transition: all .5s;
+  opacity: 0.4;
+  transition: all 0.5s;
 }
-a.twitter {
-  background-image: url(images/twitter.svg);
-}
+
 a.linkedin {
   background-image: url(images/linkedin.svg);
 }
+
 a.github {
   background-image: url(images/github.svg);
 }
+
 a.social:hover {
   opacity: 1;
 }
-.clearfix {
-  clear: both;
+
+/* Helper Classes */
+.mg-t-large {
+  margin-top: 90px;
 }
 
 /* Styles for larger screens */
 @media screen and (min-width: 720px) {
+  html {
+    font-size: 120%;
+  }
 
-  .flex {
-      display: -ms-flexbox;      /* TWEENER - IE 10 */
-      display: flex;
-      max-width: 1200px;
-      -ms-flex-pack: distribute;
-      justify-content: space-around;
-      margin: 0 auto;
+  main {
+    flex-direction: row;
+  }
+
+  .card {
+    width: 45%;
+    padding: 20px 40px 40px;
   }
 
   header {
@@ -280,11 +277,6 @@ a.social:hover {
     padding: 0 30px;
   }
 
-
-  main {
-    padding-top: 20px;
-  }
-
   main p {
     line-height: 1.6em;
   }
@@ -294,30 +286,4 @@ a.social:hover {
     max-width: 1200px;
     margin: 40px auto;
   }
-
 }
-
-/*******************************
-Property adjustments for the experience and
-contact pages
-********************************/
-
-/* I could not actually see why the header dropped down by 30px when I removed the header and background.
-This was the only way I could see to adjust it. By placing it at the bottom of the CSS I have chosen
-to bypass the media query and keep it the same on all versions. */
-
-.expNav {
-  top: 0;
-}
-
-.expFlex {
-  margin-top: 90px;
-}
-
-#workmap {
-  max-width: 100%;
-  border: 1px solid black;
-}
-/* This map could have been made with an iframe tag but it would add to my browser checking and
-I also personally, find them annoying on smartphones when the map takes up the majority of the
-viewport meaning you can get stuck when trying to scroll */
