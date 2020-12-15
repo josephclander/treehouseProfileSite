@@ -45,3 +45,7 @@ To complete this project, follow the instructions below. If you get stuck, ask a
 # Notes from tests
 
 Part 4 of the project instructions notes that HTML validators will create an error when the pipe character is used and to ignore it. This issue arises in the Treehouse automated testing.
+
+# Notes from the build
+
+This site was retested on the following browsers without notable issues: Chrome 87, Firefox 84.0b8 and Safari 14.0.1.
