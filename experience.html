@@ -23,15 +23,15 @@
       <div class="card">
         <h2>Teaching</h2>
         <div class="expsize">
+          <!-- This will now choose a smaller image if res DPR is 1
+          and width < 720px
+          Unfortunately my old photos are not great quality to start with -->
           <img
-            src="images/teaching-small.jpg"
-            srcset="
-              images/teaching-large.jpg 480w,
-              images/teaching-small.jpg 240w
-            "
-            sizes="100vw"
-            alt="Joseph Lander teaching a class"
             class="expPhoto"
+            srcset="images/teaching-350.jpg 350w, images/teaching-500.jpg 500w"
+            sizes="(max-width: 720px) 350px, 500px"
+            src="images/teaching-500.jpg"
+            alt="Joseph Lander teaching a class"
           />
         </div>
         <p>
@@ -57,14 +57,14 @@
         <h2>Web Development</h2>
         <div class="expsize">
           <img
-            src="images/atcomputer-small.jpg"
-            srcset="
-              images/atcomputer-large.jpg 480w,
-              images/atcomputer-small.jpg 240w
-            "
-            sizes="100vw"
-            alt="Joseph Lander at a computer"
             class="expPhoto"
+            srcset="
+              images/atcomputer-500.jpg 500w,
+              images/atcomputer-350.jpg 350w
+            "
+            sizes="(max-width: 720px) 350px, 500px"
+            src="images/atcomputer-500.jpg"
+            alt="Joseph Lander at a computer"
           />
         </div>
         <p>
